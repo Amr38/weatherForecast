@@ -1,0 +1,19 @@
+*{
+    transition: 2s;
+}
+.base{
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.first-item{
+    display: block !important;
+    width: 100%!important;
+    text-align: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.all-temperature{
+   
+    font-size: 1.9vw;
+}

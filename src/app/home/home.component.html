@@ -1,0 +1,22 @@
+<div *ngIf="flag" [ngStyle]="{'background-image': 'url(/assets/Images/' + dummyState +'/'+dummyImageLastPart+ ')'}" class="base container-fluid h-100 w-100">
+  <div class="row trial h-100 w-100">
+    <select class="form-control" [(ngModel)]="valueSelected" (click)="search()">
+        <option *ngFor="let i of country_list" [value]="i"  >{{ i }}</option>
+    </select>
+    <div class="col-sm-12">
+      <h1 class="base-title">{{currentCity}}</h1>
+          <h1 class="base-title">{{weatherContainer.temp_c}} </h1>
+          <h2 *ngIf="currentForcast.day.maxtemp_c"class="base-title">H{{currentForcast.day.maxtemp_c}} L{{currentForcast.day.mintemp_c}} </h2>
+          <img  *ngIf="conditionContainer.icon" [src]="conditionContainer.icon">
+        </div >
+          <div *ngFor="let f of forcastContainer" class="all col-2">
+            <p 
+            class="all-temperature col-12">{{f.date}}<br> H {{f.day.maxtemp_c}}<br> L {{f.day.mintemp_c}}
+          </p>
+          <p class="all-temperature col-4" ></p>
+          <div>
+          <img class="w-100" [src]="f.day.condition.icon">
+        </div>
+    </div>
+  </div>
+</div>
