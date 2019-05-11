@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
     this.sub1= this._weatherService.getWeather(this.valueSelected).subscribe(x => {
       this.weatherContainer=x.current;
       this.dummyImageLastPart=x.current.condition.text+'.png';
-      this.dummyImageLastPart=this.dummyImageLastPart.trimpipe.transform(this.dummyImageLastPart)
+    
       console.log(this.dummyImageLastPart);
     
       this.conditionContainer=x.current.condition;
